@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-volume-control"
+    version="1.0.0">
+    <name>Cordova Plugin Volume Control</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/volumeControl.js" name="volumeControl">
+        <runs/>
+
+        <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+        <clobbers target="VolumeControl" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="VolumeControl">
+          <param name="android-package" value="com.jack.VolumeControl" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/com/jack/VolumeControl.java" target-dir="src/com/jack/" />
+    </platform>
+</plugin>
